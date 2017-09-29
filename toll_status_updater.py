@@ -4,7 +4,7 @@ import datetime
 TTL = 60
 last_updated = int(datetime.datetime.now().timestamp())
 
-file_name = "sample_live_toll/live_toll.json"
+file_name = "../live_toll.json"
 
 with open(file_name) as data_file:
 	datum = json.load(data_file)
