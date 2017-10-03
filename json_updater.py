@@ -20,7 +20,7 @@ for file in file_list:
 
 geom_list = ["facility_geom.json", "gantry_geom.json", "toll_signs_geom.json"]
 
-for file in file_list:
+for file in geom_list:
 	file_name = str('../mtlfs/' + file)
 	with open(file_name) as data_file:
 		data = json.load(data_file)
