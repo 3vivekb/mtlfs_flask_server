@@ -39,14 +39,14 @@ def toll_status():
 
 @app.route('/mtlfs/toll_signs_geom.json')
 def toll_signs():
-	return app.send_static_file('../mtlfs/toll_signs_geom.json')
+	return app.send_static_file('toll_signs_geom.json')
 
 @app.route('/mtlfs/gantry_geom.json')
 def gant():
-	return app.send_static_file('../mtlfs/gantry_geom.json')
+	return app.send_static_file('gantry_geom.json')
 
 @app.route('/mtlfs/facility_geom.json')
 def facility_geom():
-	return app.send_static_file('../mtlfs/facility_geom.json')
+	return app.send_static_file('facility_geom.json')
 if __name__ == '__main__':
     app.run(debug=True)

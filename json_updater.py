@@ -17,3 +17,13 @@ for file in file_list:
 
 	with open('static/' + file, 'w') as f:
 		json.dump(data, f, ensure_ascii=False)
+
+geom_list = ["facility_geom.json", "gantry_geom.json", "toll_signs_geom.json"]
+
+for file in file_list:
+	file_name = str('../mtlfs/' + file)
+	with open(file_name) as data_file:
+		data = json.load(data_file)
+	with open('static/' + file, 'w') as f:
+		json.dump(data, f, ensure_ascii=False)
+
