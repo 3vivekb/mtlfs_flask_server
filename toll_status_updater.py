@@ -1,7 +1,7 @@
 import json
 import datetime
 
-TTL = 60
+TTL = 300
 last_updated = int(datetime.datetime.now().timestamp())
 
 file_name = "../live_toll.json"
