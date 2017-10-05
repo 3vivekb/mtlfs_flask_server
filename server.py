@@ -1,4 +1,4 @@
-from flask import Flask, json
+from flask import Flask, json, render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -6,7 +6,7 @@ CORS(app)
 
 @app.route('/')
 def default():
-	return app.send_static_file('mtlfs.json')
+	return render_template('salesforce_example.html')
 
 @app.route('/mtlfs/about')
 def about():
