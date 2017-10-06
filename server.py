@@ -6,7 +6,7 @@ CORS(app)
 
 @app.route('/')
 def default():
-	return render_template('salesforce_example.html')
+	return render_template('index.html')
 
 @app.route('/mtlfs/about')
 def about():
