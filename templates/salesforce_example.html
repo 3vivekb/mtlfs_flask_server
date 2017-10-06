@@ -25,6 +25,22 @@
         width: 55%;
     }
     .three-col { overflow: hidden;} */
+
+    #vta_logo {    display: block;
+    margin: 0 auto;
+}
+.img_heading_title {
+    font-size: 200%;
+    text-align: center;
+}
+.info_row {
+    font-size: 125%;
+    text-align: center;
+}
+.info_img{
+    width: 500px;
+}
+
     </style>
 
 </head>
@@ -35,6 +51,13 @@
 
 
     <div class="three-col">
+
+
+<div class="img_header">
+<img style="padding-top:12px" height="92" src="vta_logo.png" width="272" alt="vta_logo" id="vta_logo" title="VTA Logo">
+<br>
+<div class="img_heading_title">Managed and Tolled Lanes Feed Specification (MTLFS) Demo</div><br>
+</div>
 
     <!--
     +===================================================================+
@@ -82,6 +105,7 @@
     .el-wrapper .expresslane:first-child{marging-left:0;}
 }
 </style>
+
 <div class="el-wrapper" id="CLW">
     <h2>SR 237 Westbound</h2>
     <div class="expresslane">
@@ -143,8 +167,8 @@ function update_status(){
             $('#'+el_name +' .el_toll').text((price === '') ? '' : '$'+price);
             $('#'+el_name +' .el_message').text(facilities[i]['message_module']);
         }
-        $('#el_update_status').text('Last updated at '+(new Date()).toLocaleTimeString());
-        console.log(facilities[i]['interval_starting'])
+        // $('#el_update_status').text('Last updated at '+(new Date()).toLocaleTimeString());
+        // console.log(facilities[i]['interval_starting'])
     }});
 }
 
@@ -154,16 +178,27 @@ window.setInterval(function(){
 update_status()
 }, 120000);
 
-
-
     </script>
+
     </div>
+    <br>
+    <br>
+<div class="info_row"> 
+    <div class="info_row_title">Take a look at the schema documentation on our <a href="https://github.com/vta/Managed-and-Tolled-Lanes-Feed-Specification/blob/master/mtlfs.md">Github Repository</a>.</div>
+    <br>
+    <a href="https://github.com/vta/Managed-and-Tolled-Lanes-Feed-Specification/blob/master/mtlfs.md"><img src="Octocat.jpg" class="info_img"></a>
+</div>
+<br>
+<div class="info_row"> 
+    <div class="info_row_title">Check out the <a href="https://mtlfs.vta.org/mtlfs/mtlfs.json">live JSON data feed</a>.</div>
+    <br>
+    <a href="https://mtlfs.vta.org/mtlfs/mtlfs.json" class="info_img"><img src="mtlfs_json.png"/></a>
+</div>
     <!--
     +===================================================================+
     |                     END OF EXPRESS LANES CODE                     |
     +===================================================================+
     -->
-
     </div>
 </div>
 
