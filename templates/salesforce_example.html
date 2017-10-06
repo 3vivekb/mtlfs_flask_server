@@ -132,18 +132,29 @@
 </div>
   <script type="text/javascript">
 
-$.getJSON('https://mtlfs.vta.org/mtlfs/toll_status.json', function(data) {
-    facilities = data.data.facilities
+function update_status(){
+    $.getJSON('https://mtlfs.vta.org/mtlfs/toll_status.json', function(data) {
+        facilities = data.data.facilities
 
-for (var i=0; i < facilities.length; i++){
-    var el_name = facilities[i]['facility_id'];
-    var price = facilities[i]['pricing_module'];
-    if ($('#'+el_name)){
-        $('#'+el_name +' .el_toll').text((price === '') ? '' : '$'+price);
-        $('#'+el_name +' .el_message').text(facilities[i]['message_module']);
-    }
+    for (var i=0; i < facilities.length; i++){
+        var el_name = facilities[i]['facility_id'];
+        var price = facilities[i]['pricing_module'];
+        if ($('#'+el_name)){
+            $('#'+el_name +' .el_toll').text((price === '') ? '' : '$'+price);
+            $('#'+el_name +' .el_message').text(facilities[i]['message_module']);
+        }
+        $('#el_update_status').text('Last updated at '+(new Date()).toLocaleTimeString());
+        console.log(facilities[i]['interval_starting'])
+    }});
 }
-});
+
+update_status()
+
+window.setInterval(function(){
+update_status()
+}, 120000);
+
+
 
     </script>
     </div>
