@@ -32,8 +32,11 @@
 .img_heading_title {
     font-size: 200%;
     text-align: center;
-
 }
+.update_status {
+    text-align: center;
+}
+
 .info_row {
     font-size: 125%;
     text-align: center;
@@ -155,8 +158,9 @@
             <span class="el_message">&nbsp;</span>
         </div>
     </div>
+
 </div>
-  <script type="text/javascript">
+<script type="text/javascript">
 
 function update_status(){
     $.getJSON('https://mtlfs.vta.org/mtlfs/toll_status.json', function(data) {
@@ -169,9 +173,9 @@ function update_status(){
             $('#'+el_name +' .el_toll').text((price === '') ? '' : '$'+price);
             $('#'+el_name +' .el_message').text(facilities[i]['message_module']);
         }
-        // $('#el_update_status').text('Last updated at '+(new Date()).toLocaleTimeString());
-        // console.log(facilities[i]['interval_starting'])
-    }});
+    }
+    $('.el_update_status').text('Last updated at '+(new Date()).toLocaleTimeString());
+});
 }
 
 update_status()
@@ -184,6 +188,9 @@ update_status()
 
     </div>
     <br>
+<div class="update_status">
+    <span class="el_update_status">&nbsp;</span>
+</div>
     <br>
 <div class="info_row"> 
     <div class="info_row_title">Take a look at the schema documentation on our <a href="https://github.com/vta/Managed-and-Tolled-Lanes-Feed-Specification/blob/master/mtlfs.md">Github Repository</a>.</div>
