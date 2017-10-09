@@ -14,6 +14,7 @@ Find the updated data with the [discovery json](https://mtlfs.vta.org/mtlfs/mtlf
 1. Add environment variable `export FLASK_APP=server.py`
 1. Turn on debug mode `export FLASK_DEBUG=1`
 1. Run server `flask run`
+1. View at 127.0.0.1:5000
 
 ## Production Mode Details:
 1. [This guide to get started](https://www.matthealy.com.au/blog/post/deploying-flask-to-amazon-web-services-ec2/)
