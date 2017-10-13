@@ -4,6 +4,16 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+@app.after_request
+def add_header(response):
+    """
+	https://stackoverflow.com/questions/13768007/browser-caching-issues-in-flask    
+	"""
+    response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
+    response.headers['Cache-Control'] = 'public, max-age=0'
+    return response
+
+
 @app.route('/')
 def default():
 	return render_template('index.html')
@@ -51,5 +61,7 @@ def gant():
 @app.route('/mtlfs/facility_geom.json')
 def facility_geom():
 	return app.send_static_file('facility_geom.json')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
